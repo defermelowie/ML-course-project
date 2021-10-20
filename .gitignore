@@ -132,6 +132,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+
 ################################
 #      Visual Studio Code      #
 ################################
@@ -141,3 +142,10 @@ dmypy.json
 
 # Local History for Visual Studio Code
 .history/
+
+
+################################
+#           Datasets           #
+################################
+
+/data

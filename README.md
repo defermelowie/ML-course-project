@@ -5,9 +5,9 @@
 ```bash
 ML-course-project
 ├── data
-│   └ -> "Dataset(s)"
+│   └ ─ {Dataset(s)}
 ├── env
-│   └ -> "Python Virtual Environment"
+│   └ ─ {Python Virtual Environment}
 ├── LICENSE
 ├── README.md
 ├── requirements.txt

@@ -16,3 +16,7 @@ ML-course-project
 └── src
     └── main.py
 ```
+
+## Dataset
+
+[garbage-classification](https://www.kaggle.com/asdasdasasdas/garbage-classification)

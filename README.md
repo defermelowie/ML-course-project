@@ -5,7 +5,13 @@
 ```bash
 ML-course-project
 ├── data
-│   └── {Dataset(s)}
+│   └── garbage_classification
+│       ├── cardboard
+│       ├── glass
+│       ├── metal
+│       ├── paper
+│       ├── plastic
+│       └── trash
 ├── env
 │   └── {Python Virtual Environment}
 ├── LICENSE

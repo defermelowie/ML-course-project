@@ -1,8 +1,8 @@
+from os import path
 from typing import Dict, List, Tuple
 from PIL import Image
 import numpy as np
-
-VERBOSE = 1
+import logging
 
 
 class ImageLoader:
@@ -15,8 +15,7 @@ class ImageLoader:
         self.set = set
         self.scale_factor = scale_factor
 
-        if VERBOSE:
-            print(f'[INFO] Set: {self.set}')
+        logging.info(f'Load set: {self.set}')
 
     def load_images(self) -> Tuple[np.ndarray, np.ndarray]:
         """Get all images in path_list of given set as numpy array
@@ -24,16 +23,33 @@ class ImageLoader:
         Returns:
             (X, Y)
 
-            X: n by 3*dim
-            Y: n
+            X: (n, 3*dim)
+            Y: (n,)
         """
-        x = []
+        # Create empty arrays
+        X = np.array([])
+        Y = np.array([])
+
+        # Populate arrays
         for image in self.path_list:
-            x = [x, self._img_array_from_path(image['path'])]
-        print(x)
-        # TODO: Convert x to array
-        # TODO: Load y values
-        pass
+            if(X.size == 0):
+                X = self._img_array_from_path(image['path'])
+                Y = np.array(image['type'])
+            else:
+                X = np.c_[X, self._img_array_from_path(image['path'])]
+                Y = np.r_[Y, np.array(image['type'])]
+
+        # Transpose X in order to have shape (n, 3*dim)
+        X = X.T
+
+        # Logging
+        for setname in ['papier', 'glas', 'pmd', 'restafval']:
+            logging.debug(
+                f'# {setname} in Y: {np.count_nonzero(Y == setname)}')
+        logging.info(f'Shape of X: {X.shape}')
+        logging.info(f'Shape of Y: {Y.shape}')
+
+        return (X, Y)
 
     def _img_array_from_path(self, path: str) -> np.array:
         """Open image and convert to numpy array
@@ -48,9 +64,9 @@ class ImageLoader:
                                 resample=Image.ANTIALIAS)
         (img_R_chan, img_G_chan, img_B_chan) = img_res.split()
 
-        if VERBOSE:
-            print('[INFO] Loaded image: height=%s, width=%s' % img_og.size)
-            print('[INFO] Resized image: height=%s, width=%s' % img_res.size)
+        logging.debug('Loaded image: path="%s" height=%s, width=%s' %
+                      (path, img_og.size[0], img_og.size[1]))
+        logging.debug('Resized image: height=%s, width=%s' % img_res.size)
 
         # Combine image channels to np array
         (R_chan, G_chan, B_chan) = (np.asarray(img_R_chan).flatten(),
@@ -58,7 +74,6 @@ class ImageLoader:
                                     np.asarray(img_B_chan).flatten())
         input_data = np.concatenate((R_chan, G_chan, B_chan))
 
-        if VERBOSE:
-            print(f'[INFO] Generated array: size={input_data.shape}')
+        #logging.debug(f'Generated image array: size={input_data.shape}')
 
         return input_data

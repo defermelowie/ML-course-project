@@ -9,10 +9,12 @@ class ImageLoader:
     path_list: List[dict]
     sets: Set[str]
     scale_factor: int
+    classes: Dict[str, int]
 
-    def __init__(self, path_list: List[dict], sets: Set[str], scale_factor: int = 10) -> None:
+    def __init__(self, path_list: List[dict], sets: Set[str], classes: Dict[str, int], scale_factor: int = 10) -> None:
         self.path_list = filter(lambda item: item['set'] in sets, path_list)
         self.sets = sets
+        self.classes = classes
         self.scale_factor = scale_factor
 
         logging.info(f'Load set: {self.sets}')
@@ -34,18 +36,18 @@ class ImageLoader:
         for image in self.path_list:
             if(X.size == 0):
                 X = self._img_array_from_path(image['path'])
-                Y = np.array(image['type'])
+                Y = np.array(self.classes[image['type']])
             else:
                 X = np.c_[X, self._img_array_from_path(image['path'])]
-                Y = np.r_[Y, np.array(image['type'])]
+                Y = np.r_[Y, np.array(self.classes[image['type']])]
 
         # Transpose X in order to have shape (n, 3*dim)
         X = X.T
 
         # Logging
-        for setname in ['papier', 'glas', 'pmd', 'restafval']:
+        for classname, classnr in self.classes.items():
             logging.debug(
-                f'#{setname} in Y: {np.count_nonzero(Y == setname)}')
+                f'#{classname} in Y: {np.count_nonzero(Y == classnr)}')
         logging.info(f'Shape of X: {X.shape}')
         logging.info(f'Shape of Y: {Y.shape}')
 

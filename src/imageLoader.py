@@ -45,7 +45,7 @@ class ImageLoader:
         # Logging
         for setname in ['papier', 'glas', 'pmd', 'restafval']:
             logging.debug(
-                f'# {setname} in Y: {np.count_nonzero(Y == setname)}')
+                f'#{setname} in Y: {np.count_nonzero(Y == setname)}')
         logging.info(f'Shape of X: {X.shape}')
         logging.info(f'Shape of Y: {Y.shape}')
 

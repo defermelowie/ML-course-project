@@ -27,7 +27,8 @@ with open(DATA_PATHS, mode='r') as fd:
         path_list.append(dict)
 
 # Load X & y from path_list
-imageLoader = ImageLoader(path_list, 'cv0', scale_factor=IMG_RESCALE_FACTOR)
+sets = {'cv0'} # Possibilities: {'test', 'cv0', 'cv1', 'cv2', 'cv3'}
+imageLoader = ImageLoader(path_list, sets, scale_factor=IMG_RESCALE_FACTOR)
 (X_, Y) = imageLoader.load_images()
 
 # Normalize X
@@ -47,4 +48,12 @@ nn = NeuralNetwork((X.shape[1], X.shape[1], len(np.unique(Y))),
                    epsilon_init=NN_EPSILON_INIT,
                    lambda_=NN_LAMBDA
                    )
+
+###############################
+#    Train Neural Network     #
+###############################
 nn.feed_forward(X)
+
+###############################
+#   Validate Neural Network   #
+###############################

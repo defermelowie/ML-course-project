@@ -1,5 +1,5 @@
 from os import path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Set, Tuple
 from PIL import Image
 import numpy as np
 import logging
@@ -7,15 +7,15 @@ import logging
 
 class ImageLoader:
     path_list: List[dict]
-    set: str
+    sets: Set[str]
     scale_factor: int
 
-    def __init__(self, path_list: List[dict], set: str, scale_factor: int = 10) -> None:
-        self.path_list = filter(lambda item: item['set'] == set, path_list)
-        self.set = set
+    def __init__(self, path_list: List[dict], sets: Set[str], scale_factor: int = 10) -> None:
+        self.path_list = filter(lambda item: item['set'] in sets, path_list)
+        self.sets = sets
         self.scale_factor = scale_factor
 
-        logging.info(f'Load set: {self.set}')
+        logging.info(f'Load set: {self.sets}')
 
     def load_images(self) -> Tuple[np.ndarray, np.ndarray]:
         """Get all images in path_list of given set as numpy array

@@ -128,6 +128,10 @@ class NeuralNetwork:
 
         return a_list  # Return all layers
 
+    def predict(self, X: np.ndarray) -> np.ndarray:
+        layers = self.feed_forward(X, self.theta_list)
+        return np.argmax(layers[-1], axis=1)
+
     def get_network_parameters_as_dict(self) -> Dict:
         """Export network params as dict"""
         # Initialize empty dictionary

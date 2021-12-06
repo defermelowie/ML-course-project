@@ -43,7 +43,7 @@ X = X_*(1.0/255.0)
 
 # Neural network constants
 NN_EPSILON_INIT = 0.12
-NN_LAMBDA = 0.1
+NN_LAMBDA = 0.2
 
 # Build neural network
 nn = NeuralNetwork((X.shape[1], X.shape[1]//2, len(np.unique(Y))),

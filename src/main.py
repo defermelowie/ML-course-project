@@ -84,8 +84,10 @@ for cv_set in sets:
 
     accuracy_list = [initial_accuracy]
 
-    for i in range(0, 10):
-        nn.train(X, Y_x, 200)
+    train_step_size = 200
+    train_steps = 10
+    for i in range(0, train_steps):
+        nn.train(X, Y_x, train_step_size)
         trained_accuracy = np.sum(np.equal(nn.predict(CV), Y_cv))/Y_cv.shape[0]
         logging.info(f'Cross validation accuracy: {trained_accuracy}')
         accuracy_list.append(trained_accuracy)
@@ -104,7 +106,7 @@ with open(f'{result_dir_path}/model.json', 'w') as fd:
 #       Plot CV results       #
 ###############################
 
-iterations = [100*i for i in range(0, 11)]
+iterations = [train_step_size*i for i in range(0, train_steps+1)]
 styles = ['k-', 'k--', 'k-.', 'k:']
 
 for i, accuracy in enumerate(CV_accuracies):

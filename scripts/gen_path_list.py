@@ -101,21 +101,21 @@ random.shuffle(restafval_list)
 for item in papier_list:
     item['set'] = next(labels)
 
-# for item in glas_list:
-#    item['set'] = next(labels)
+for item in glas_list:
+    item['set'] = next(labels)
 
 for item in pmd_list:
     item['set'] = next(labels)
 
-# for item in restafval_list:
-#    item['set'] = next(labels)
+for item in restafval_list:
+    item['set'] = next(labels)
 
 ###############
 # Save to csv #
 ###############
 
 # Combine all lists
-    path_list = papier_list + glas_list + pmd_list + restafval_list
+path_list = papier_list + glas_list + pmd_list + restafval_list
 
 with open('./data/path_list.csv', mode='w', newline='') as fd:
     writer = csv.DictWriter(fd, dict.keys(path_list[0]))

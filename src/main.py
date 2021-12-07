@@ -1,6 +1,7 @@
 from os import mkdir
 from datetime import datetime
 from typing import List
+import json
 import numpy as np
 from csv import DictReader
 import logging
@@ -20,15 +21,15 @@ logging.basicConfig(
 )
 
 # General constants
-#classes = {'papier': 0, 'glas': 1, 'pmd': 2, 'restafval': 3}
-classes = {'papier': 0, 'pmd': 1}
+classes = {'papier': 0, 'glas': 1, 'pmd': 2, 'restafval': 3}
+#classes = {'papier': 0, 'pmd': 1}
 
 ###############################################################
 #                         Load images                         #
 ###############################################################
 
 # Image constants
-IMG_RESCALE_FACTOR = 20
+IMG_RESCALE_FACTOR = 2.
 DATA_PATHS = './data/path_list.csv'
 
 # Load path_list from csv file
@@ -83,8 +84,8 @@ for cv_set in sets:
 
     accuracy_list = [initial_accuracy]
 
-    for i in range(0, 20):
-        nn.train(X, Y_x, 100)
+    for i in range(0, 10):
+        nn.train(X, Y_x, 200)
         trained_accuracy = np.sum(np.equal(nn.predict(CV), Y_cv))/Y_cv.shape[0]
         logging.info(f'Cross validation accuracy: {trained_accuracy}')
         accuracy_list.append(trained_accuracy)
@@ -92,20 +93,29 @@ for cv_set in sets:
     CV_accuracies.append({'cv': cv_set, 'accuracy': accuracy_list})
 
 ###############################
+#    Export NN Parameters     #
+###############################
+
+with open(f'{result_dir_path}/model.json', 'w') as fd:
+    model = {'model': nn.get_network_parameters_as_dict()}
+    json.dump(model, fd)
+
+###############################
 #       Plot CV results       #
 ###############################
 
-iterations = [100*i for i in range(0, 21)]
+iterations = [100*i for i in range(0, 11)]
+styles = ['k-', 'k--', 'k-.', 'k:']
 
-for accuracy in CV_accuracies:
-    plt.plot(iterations, accuracy['accuracy'], label=accuracy['cv'])
+for i, accuracy in enumerate(CV_accuracies):
+    plt.plot(iterations, accuracy['accuracy'], styles[i], label=accuracy['cv'])
 
 plt.legend()
 plt.xlabel('Iterations')
 plt.ylabel('Accuracy')
 plt.grid(visible=True, which='both', axis='both')
-plt.savefig(f'{result_dir_path}/Accuracy_Iterations.png')
-plt.show()
+plt.savefig(f'{result_dir_path}/accuracy_iterations.pdf')
+# plt.show()
 
 ###############################
 #   Measure NN Performance    #
@@ -120,9 +130,3 @@ plt.show()
 # # Predict classes of test set
 # P = nn.predict(T)
 # logging.info(f'Test accuracy: {np.sum(np.equal(P, Y_t))/Y_t.shape[0]}')
-
-###############################
-#    Export NN Parameters     #
-###############################
-
-print(nn.get_network_parameters_as_dict())

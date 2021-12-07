@@ -48,9 +48,9 @@ class ImageLoader:
         # Logging
         for classname, classnr in self.classes.items():
             logging.info(
-                f'Fraction of {classname} in Y: {np.count_nonzero(Y == classnr)/Y.shape[0]}')
-        logging.info(f'Shape of X: {X.shape}')
-        logging.info(f'Shape of Y: {Y.shape}')
+                f'Fraction of {classname} in {self.sets}: {np.count_nonzero(Y == classnr)/Y.shape[0]}')
+        logging.debug(f'Shape of X: {X.shape}')
+        logging.debug(f'Shape of Y: {Y.shape}')
 
         return (X, Y)
 

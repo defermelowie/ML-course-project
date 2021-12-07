@@ -145,7 +145,11 @@ dmypy.json
 
 
 ################################
-#           Datasets           #
+#      Datasets & Results      #
 ################################
 
+# Ignore dataset
 /data
+
+# Dont ignore result log files
+!main.log

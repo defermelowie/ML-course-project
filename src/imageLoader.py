@@ -12,6 +12,7 @@ class ImageLoader:
     classes: Dict[str, int]
 
     def __init__(self, path_list: List[dict], sets: Set[str], classes: Dict[str, int], scale_factor: int = 10) -> None:
+        """ New ImageLoader instance"""
         self.path_list = filter(lambda item: item['set'] in sets, path_list)
         self.sets = sets
         self.classes = classes
@@ -46,8 +47,8 @@ class ImageLoader:
 
         # Logging
         for classname, classnr in self.classes.items():
-            logging.debug(
-                f'#{classname} in Y: {np.count_nonzero(Y == classnr)}')
+            logging.info(
+                f'Fraction of {classname} in Y: {np.count_nonzero(Y == classnr)/Y.shape[0]}')
         logging.info(f'Shape of X: {X.shape}')
         logging.info(f'Shape of Y: {Y.shape}')
 

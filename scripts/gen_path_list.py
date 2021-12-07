@@ -101,14 +101,14 @@ random.shuffle(restafval_list)
 for item in papier_list:
     item['set'] = next(labels)
 
-for item in glas_list:
-    item['set'] = next(labels)
+# for item in glas_list:
+#    item['set'] = next(labels)
 
 for item in pmd_list:
     item['set'] = next(labels)
 
-for item in restafval_list:
-    item['set'] = next(labels)
+# for item in restafval_list:
+#    item['set'] = next(labels)
 
 ###############
 # Save to csv #

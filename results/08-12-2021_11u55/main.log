@@ -1,0 +1,76 @@
+[2021-12-08 11:55:32,202 | INFO] ---------------------------------------------------------------
+[2021-12-08 11:55:32,202 | INFO] Load set: {'cv3', 'cv1', 'cv2'}
+[2021-12-08 11:55:43,162 | INFO] Fraction of papier in {'cv3', 'cv1', 'cv2'}: 0.3940594059405941
+[2021-12-08 11:55:43,162 | INFO] Fraction of glas in {'cv3', 'cv1', 'cv2'}: 0.19867986798679868
+[2021-12-08 11:55:43,162 | INFO] Fraction of pmd in {'cv3', 'cv1', 'cv2'}: 0.32805280528052805
+[2021-12-08 11:55:43,162 | INFO] Fraction of restafval in {'cv3', 'cv1', 'cv2'}: 0.07920792079207921
+[2021-12-08 11:55:43,174 | INFO] Load set: cv0
+[2021-12-08 11:55:45,976 | INFO] Fraction of papier in cv0: 0.3952569169960474
+[2021-12-08 11:55:45,977 | INFO] Fraction of glas in cv0: 0.1976284584980237
+[2021-12-08 11:55:45,981 | INFO] Fraction of pmd in cv0: 0.32608695652173914
+[2021-12-08 11:55:45,982 | INFO] Fraction of restafval in cv0: 0.08102766798418973
+[2021-12-08 11:55:46,061 | INFO] Neural network with shape (2550, 1275, 4) was created
+[2021-12-08 11:55:46,189 | INFO] Initial cross validation accuracy: 0.3102766798418972
+[2021-12-08 11:55:46,197 | INFO] Optimize with max 500 iterations ...
+[2021-12-08 12:10:45,816 | INFO] Cross validation accuracy: 0.5533596837944664
+[2021-12-08 12:10:45,827 | INFO] Optimize with max 500 iterations ...
+[2021-12-08 12:20:58,380 | INFO] Cross validation accuracy: 0.5395256916996047
+[2021-12-08 12:20:58,388 | INFO] Optimize with max 500 iterations ...
+[2021-12-08 12:33:17,169 | INFO] Cross validation accuracy: 0.5573122529644269
+[2021-12-08 12:33:17,230 | INFO] ---------------------------------------------------------------
+[2021-12-08 12:33:17,230 | INFO] Load set: {'cv0', 'cv1', 'cv2'}
+[2021-12-08 12:33:25,809 | INFO] Fraction of papier in {'cv0', 'cv1', 'cv2'}: 0.3944591029023747
+[2021-12-08 12:33:25,809 | INFO] Fraction of glas in {'cv0', 'cv1', 'cv2'}: 0.19854881266490765
+[2021-12-08 12:33:25,809 | INFO] Fraction of pmd in {'cv0', 'cv1', 'cv2'}: 0.32717678100263853
+[2021-12-08 12:33:25,809 | INFO] Fraction of restafval in {'cv0', 'cv1', 'cv2'}: 0.07981530343007916
+[2021-12-08 12:33:25,829 | INFO] Load set: cv3
+[2021-12-08 12:33:28,353 | INFO] Fraction of papier in cv3: 0.3940594059405941
+[2021-12-08 12:33:28,353 | INFO] Fraction of glas in cv3: 0.19801980198019803
+[2021-12-08 12:33:28,353 | INFO] Fraction of pmd in cv3: 0.3287128712871287
+[2021-12-08 12:33:28,353 | INFO] Fraction of restafval in cv3: 0.07920792079207921
+[2021-12-08 12:33:28,424 | INFO] Neural network with shape (2550, 1275, 4) was created
+[2021-12-08 12:33:28,555 | INFO] Initial cross validation accuracy: 0.19801980198019803
+[2021-12-08 12:33:28,563 | INFO] Optimize with max 500 iterations ...
+[2021-12-08 12:40:14,232 | INFO] Cross validation accuracy: 0.5287128712871287
+[2021-12-08 12:40:14,240 | INFO] Optimize with max 500 iterations ...
+[2021-12-08 12:47:03,253 | INFO] Cross validation accuracy: 0.5584158415841585
+[2021-12-08 12:47:03,261 | INFO] Optimize with max 500 iterations ...
+[2021-12-08 12:54:06,861 | INFO] Cross validation accuracy: 0.49306930693069306
+[2021-12-08 12:54:06,950 | INFO] ---------------------------------------------------------------
+[2021-12-08 12:54:06,950 | INFO] Load set: {'cv0', 'cv3', 'cv2'}
+[2021-12-08 12:54:16,091 | INFO] Fraction of papier in {'cv0', 'cv3', 'cv2'}: 0.3944591029023747
+[2021-12-08 12:54:16,091 | INFO] Fraction of glas in {'cv0', 'cv3', 'cv2'}: 0.19788918205804748
+[2021-12-08 12:54:16,091 | INFO] Fraction of pmd in {'cv0', 'cv3', 'cv2'}: 0.32783641160949867
+[2021-12-08 12:54:16,091 | INFO] Fraction of restafval in {'cv0', 'cv3', 'cv2'}: 0.07981530343007916
+[2021-12-08 12:54:16,111 | INFO] Load set: cv1
+[2021-12-08 12:54:18,674 | INFO] Fraction of papier in cv1: 0.3940594059405941
+[2021-12-08 12:54:18,674 | INFO] Fraction of glas in cv1: 0.2
+[2021-12-08 12:54:18,674 | INFO] Fraction of pmd in cv1: 0.32673267326732675
+[2021-12-08 12:54:18,674 | INFO] Fraction of restafval in cv1: 0.07920792079207921
+[2021-12-08 12:54:18,753 | INFO] Neural network with shape (2550, 1275, 4) was created
+[2021-12-08 12:54:18,876 | INFO] Initial cross validation accuracy: 0.3940594059405941
+[2021-12-08 12:54:18,884 | INFO] Optimize with max 500 iterations ...
+[2021-12-08 13:13:03,613 | INFO] Cross validation accuracy: 0.5069306930693069
+[2021-12-08 13:13:03,634 | INFO] Optimize with max 500 iterations ...
+[2021-12-08 13:22:55,938 | INFO] Cross validation accuracy: 0.5227722772277228
+[2021-12-08 13:22:55,948 | INFO] Optimize with max 500 iterations ...
+[2021-12-08 13:36:17,345 | INFO] Cross validation accuracy: 0.5405940594059406
+[2021-12-08 13:36:17,411 | INFO] ---------------------------------------------------------------
+[2021-12-08 13:36:17,412 | INFO] Load set: {'cv0', 'cv3', 'cv1'}
+[2021-12-08 13:36:30,704 | INFO] Fraction of papier in {'cv0', 'cv3', 'cv1'}: 0.3944591029023747
+[2021-12-08 13:36:30,704 | INFO] Fraction of glas in {'cv0', 'cv3', 'cv1'}: 0.19854881266490765
+[2021-12-08 13:36:30,704 | INFO] Fraction of pmd in {'cv0', 'cv3', 'cv1'}: 0.32717678100263853
+[2021-12-08 13:36:30,704 | INFO] Fraction of restafval in {'cv0', 'cv3', 'cv1'}: 0.07981530343007916
+[2021-12-08 13:36:30,724 | INFO] Load set: cv2
+[2021-12-08 13:36:35,689 | INFO] Fraction of papier in cv2: 0.3940594059405941
+[2021-12-08 13:36:35,689 | INFO] Fraction of glas in cv2: 0.19801980198019803
+[2021-12-08 13:36:35,693 | INFO] Fraction of pmd in cv2: 0.3287128712871287
+[2021-12-08 13:36:35,693 | INFO] Fraction of restafval in cv2: 0.07920792079207921
+[2021-12-08 13:36:35,829 | INFO] Neural network with shape (2550, 1275, 4) was created
+[2021-12-08 13:36:36,083 | INFO] Initial cross validation accuracy: 0.201980198019802
+[2021-12-08 13:36:36,104 | INFO] Optimize with max 500 iterations ...
+[2021-12-08 13:40:50,724 | INFO] Cross validation accuracy: 0.2079207920792079
+[2021-12-08 13:40:50,734 | INFO] Optimize with max 500 iterations ...
+[2021-12-08 13:59:34,510 | INFO] Cross validation accuracy: 0.499009900990099
+[2021-12-08 13:59:34,525 | INFO] Optimize with max 500 iterations ...
+[2021-12-08 14:09:12,601 | INFO] Cross validation accuracy: 0.5267326732673268

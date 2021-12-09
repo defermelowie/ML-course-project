@@ -1,0 +1,1 @@
+{"model": {"layer_sizes": {"layer_0": 2550, "layer_1": 1275, "layer_2": 4}, "lambda": 0.5, "training_iterations": 3000}}

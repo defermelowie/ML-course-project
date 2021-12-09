@@ -29,7 +29,7 @@ classes = {'papier': 0, 'glas': 1, 'pmd': 2, 'restafval': 3}
 ###############################################################
 
 # Image constants
-IMG_RESCALE_FACTOR = 2.
+IMG_RESCALE_FACTOR = 15
 DATA_PATHS = './data/path_list.csv'
 
 # Load path_list from csv file
@@ -79,38 +79,70 @@ for cv_set in sets:
     ###############################
     #    Train Neural Network     #
     ###############################
-    initial_accuracy = np.sum(np.equal(nn.predict(CV), Y_cv))/Y_cv.shape[0]
-    logging.info(f'Initial cross validation accuracy: {initial_accuracy}')
+    initial_cv_accuracy = np.sum(np.equal(nn.predict(CV), Y_cv))/Y_cv.shape[0]
+    logging.info(f'Initial cross validation accuracy: {initial_cv_accuracy}')
 
-    accuracy_list = [initial_accuracy]
+    initial_train_accuracy = np.sum(np.equal(nn.predict(X), Y_x))/Y_x.shape[0]
+    logging.info(f'Initial training accuracy: {initial_train_accuracy}')
 
-    train_step_size = 200
-    train_steps = 10
-    for i in range(0, train_steps):
-        nn.train(X, Y_x, train_step_size)
-        trained_accuracy = np.sum(np.equal(nn.predict(CV), Y_cv))/Y_cv.shape[0]
-        logging.info(f'Cross validation accuracy: {trained_accuracy}')
-        accuracy_list.append(trained_accuracy)
+    cv_accuracy_list = [initial_cv_accuracy]
+    train_accuracy_list = [initial_train_accuracy]
+    iteration_list = [0]
 
-    CV_accuracies.append({'cv': cv_set, 'accuracy': accuracy_list})
+    train_step_iter_count = 200
+    train_steps = 15
+    for i in range(1, train_steps+1):
+        nn.train(X, Y_x, train_step_iter_count)
 
-###############################
-#    Export NN Parameters     #
-###############################
+        trained_cv_accuracy = np.sum(
+            np.equal(nn.predict(CV), Y_cv))/Y_cv.shape[0]
+        logging.info(f'Cross validation accuracy: {trained_cv_accuracy}')
 
-with open(f'{result_dir_path}/model.json', 'w') as fd:
-    model = {'model': nn.get_network_parameters_as_dict()}
-    json.dump(model, fd)
+        trained_train_accuracy = np.sum(
+            np.equal(nn.predict(X), Y_x))/Y_x.shape[0]
+        logging.info(f'Training accuracy: {trained_train_accuracy}')
+
+        cv_accuracy_list.append(trained_cv_accuracy)
+        train_accuracy_list.append(trained_train_accuracy)
+        iteration_list.append(i*train_step_iter_count)
+
+    CV_accuracies.append({
+        'cv': cv_set,
+        'cv_accuracy': cv_accuracy_list,
+        'train_accuracy': train_accuracy_list,
+        'iterations': iteration_list
+    })
+
+    ###############################
+    #    Export NN Parameters     #
+    ###############################
+
+    with open(f'{result_dir_path}/model_{cv_set}.json', 'w') as fd:
+        model = {'model': nn.get_network_parameters_as_dict()}
+        json.dump(model, fd)
+
+    theta = nn.get_theta()
+    np.save(f'{result_dir_path}/theta_{cv_set}.npy', theta)
 
 ###############################
 #       Plot CV results       #
 ###############################
 
-iterations = [train_step_size*i for i in range(0, train_steps+1)]
-styles = ['k-', 'k--', 'k-.', 'k:']
+line_styles = ['-', '--', '-.', ':']
 
 for i, accuracy in enumerate(CV_accuracies):
-    plt.plot(iterations, accuracy['accuracy'], styles[i], label=accuracy['cv'])
+    plt.plot(
+        accuracy['iterations'],
+        accuracy['cv_accuracy'],
+        f'k{line_styles[i]}',
+        label=f'cross validation accuracy ({accuracy["cv"]})'
+    )
+    plt.plot(
+        accuracy['iterations'],
+        accuracy['train_accuracy'],
+        f'b{line_styles[i]}',
+        label=f'training accuracy ({accuracy["cv"]})'
+    )
 
 plt.legend()
 plt.xlabel('Iterations')

@@ -87,8 +87,11 @@ class NeuralNetwork:
 
         return params
 
-    def get_theta_list(self) -> List[np.ndarray]:
-        return self.theta_list
+    def get_theta(self) -> np.ndarray:
+        return self._ravel_theta(self.theta_list)
+
+    def load_theta(self, theta: np.ndarray):
+        self.theta_list = self._unravel_theta(theta)
 
     def _cost_function(self, thetas: np.ndarray, X: np.ndarray, Y: np.ndarray) -> Tuple[float, np.ndarray]:
         """Calculate cost function using X {shape: (set_size, input_layer_size)} and Y {shape: (set_size,)}

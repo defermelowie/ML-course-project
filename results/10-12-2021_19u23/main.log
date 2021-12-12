@@ -1,0 +1,49 @@
+[2021-12-10 19:23:38,466 | INFO] ---------------------------------------------------------------
+[2021-12-10 19:23:38,466 | INFO] Load set: {'cv2', 'cv1', 'cv3'}
+[2021-12-10 19:23:45,762 | INFO] Fraction of papier in {'cv2', 'cv1', 'cv3'}: 0.3940594059405941
+[2021-12-10 19:23:45,762 | INFO] Fraction of glas in {'cv2', 'cv1', 'cv3'}: 0.19867986798679868
+[2021-12-10 19:23:45,763 | INFO] Fraction of pmd in {'cv2', 'cv1', 'cv3'}: 0.32805280528052805
+[2021-12-10 19:23:45,763 | INFO] Fraction of restafval in {'cv2', 'cv1', 'cv3'}: 0.07920792079207921
+[2021-12-10 19:23:45,770 | INFO] Load set: cv0
+[2021-12-10 19:23:47,715 | INFO] Fraction of papier in cv0: 0.3952569169960474
+[2021-12-10 19:23:47,715 | INFO] Fraction of glas in cv0: 0.1976284584980237
+[2021-12-10 19:23:47,715 | INFO] Fraction of pmd in cv0: 0.32608695652173914
+[2021-12-10 19:23:47,715 | INFO] Fraction of restafval in cv0: 0.08102766798418973
+[2021-12-10 19:23:47,751 | INFO] Neural network with shape (2550, 1275, 4) was created
+[2021-12-10 19:23:47,846 | INFO] Initial cross validation accuracy: 0.1956521739130435
+[2021-12-10 19:23:48,075 | INFO] Initial training accuracy: 0.19603960396039605
+[2021-12-10 19:23:48,081 | INFO] Optimize with max 2000 iterations ...
+[2021-12-10 19:25:06,994 | INFO] Cross validation accuracy: 0.39920948616600793
+[2021-12-10 19:25:07,228 | INFO] Training accuracy: 0.3947194719471947
+[2021-12-10 19:25:07,307 | INFO] Initial cross validation accuracy: 0.1956521739130435
+[2021-12-10 19:25:07,536 | INFO] Initial training accuracy: 0.19603960396039605
+[2021-12-10 19:25:07,541 | INFO] Optimize with max 200 iterations ...
+[2021-12-10 19:26:27,632 | INFO] Cross validation accuracy: 0.39920948616600793
+[2021-12-10 19:26:27,862 | INFO] Training accuracy: 0.3947194719471947
+[2021-12-10 19:26:27,866 | INFO] Optimize with max 200 iterations ...
+[2021-12-10 19:29:23,630 | INFO] Cross validation accuracy: 0.5612648221343873
+[2021-12-10 19:29:23,859 | INFO] Training accuracy: 0.5346534653465347
+[2021-12-10 19:29:23,863 | INFO] Optimize with max 200 iterations ...
+[2021-12-10 19:32:15,459 | INFO] Cross validation accuracy: 0.5691699604743083
+[2021-12-10 19:32:15,690 | INFO] Training accuracy: 0.5465346534653466
+[2021-12-10 19:32:15,694 | INFO] Optimize with max 200 iterations ...
+[2021-12-10 19:33:50,258 | INFO] Cross validation accuracy: 0.5355731225296443
+[2021-12-10 19:33:50,490 | INFO] Training accuracy: 0.5458745874587458
+[2021-12-10 19:33:50,495 | INFO] Optimize with max 200 iterations ...
+[2021-12-10 19:36:05,387 | INFO] Cross validation accuracy: 0.549407114624506
+[2021-12-10 19:36:05,617 | INFO] Training accuracy: 0.5874587458745875
+[2021-12-10 19:36:05,622 | INFO] Optimize with max 200 iterations ...
+[2021-12-10 19:38:13,352 | INFO] Cross validation accuracy: 0.5375494071146245
+[2021-12-10 19:38:13,581 | INFO] Training accuracy: 0.5808580858085809
+[2021-12-10 19:38:13,586 | INFO] Optimize with max 200 iterations ...
+[2021-12-10 19:41:17,685 | INFO] Cross validation accuracy: 0.5533596837944664
+[2021-12-10 19:41:17,915 | INFO] Training accuracy: 0.6250825082508251
+[2021-12-10 19:41:17,919 | INFO] Optimize with max 200 iterations ...
+[2021-12-10 19:44:15,527 | INFO] Cross validation accuracy: 0.5790513833992095
+[2021-12-10 19:44:15,757 | INFO] Training accuracy: 0.6686468646864686
+[2021-12-10 19:44:15,762 | INFO] Optimize with max 200 iterations ...
+[2021-12-10 19:47:19,510 | INFO] Cross validation accuracy: 0.6185770750988142
+[2021-12-10 19:47:19,739 | INFO] Training accuracy: 0.7577557755775578
+[2021-12-10 19:47:19,744 | INFO] Optimize with max 200 iterations ...
+[2021-12-10 19:49:54,134 | INFO] Cross validation accuracy: 0.6126482213438735
+[2021-12-10 19:49:54,364 | INFO] Training accuracy: 0.7742574257425743

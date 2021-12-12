@@ -40,7 +40,10 @@ class NeuralNetwork:
 
     def train(self, X: np.ndarray, Y: np.ndarray, max_iterations: int = 100):
         # options
-        options = {'maxiter': max_iterations}
+        options = {
+            'maxiter': max_iterations,
+            'disp': True
+        }
 
         # Initial thetas
         theta_init = self._ravel_theta(self.theta_list)

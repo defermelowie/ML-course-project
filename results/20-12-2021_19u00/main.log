@@ -1,0 +1,30 @@
+[2021-12-20 19:00:09,460 | INFO] ---------------------------------------------------------------
+[2021-12-20 19:00:09,460 | INFO] Load set: {'cv1', 'cv0', 'cv3', 'cv2'}
+[2021-12-20 19:00:24,783 | INFO] Fraction of papier in {'cv1', 'cv0', 'cv3', 'cv2'}: 0.39435922810489854
+[2021-12-20 19:00:24,783 | INFO] Fraction of glas in {'cv1', 'cv0', 'cv3', 'cv2'}: 0.198416625432954
+[2021-12-20 19:00:24,783 | INFO] Fraction of pmd in {'cv1', 'cv0', 'cv3', 'cv2'}: 0.3275606135576447
+[2021-12-20 19:00:24,783 | INFO] Fraction of restafval in {'cv1', 'cv0', 'cv3', 'cv2'}: 0.07966353290450272
+[2021-12-20 19:00:25,017 | INFO] Neural network with shape (2550, 1275, 4) was created
+[2021-12-20 19:00:25,885 | INFO] Initial training accuracy: 0.1999010390895596
+[2021-12-20 19:00:25,896 | INFO] Optimize with max 500 iterations ...
+[2021-12-20 19:05:26,025 | INFO] Training accuracy: 0.5477486392874814
+[2021-12-20 19:05:26,038 | INFO] Optimize with max 500 iterations ...
+[2021-12-20 19:11:38,142 | INFO] Training accuracy: 0.5729836714497774
+[2021-12-20 19:11:38,154 | INFO] Optimize with max 500 iterations ...
+[2021-12-20 19:32:44,619 | INFO] Training accuracy: 0.5779317169717961
+[2021-12-20 19:32:44,636 | INFO] Optimize with max 500 iterations ...
+[2021-12-20 19:44:58,782 | INFO] Training accuracy: 0.5843641761504206
+[2021-12-20 19:44:58,792 | INFO] Optimize with max 500 iterations ...
+[2021-12-20 19:55:13,919 | INFO] Training accuracy: 0.6961900049480455
+[2021-12-20 19:55:13,931 | INFO] Optimize with max 500 iterations ...
+[2021-12-20 20:09:35,023 | INFO] Training accuracy: 0.7219198416625433
+[2021-12-20 20:09:35,033 | INFO] Optimize with max 500 iterations ...
+[2021-12-20 20:14:27,128 | INFO] Training accuracy: 0.7179614052449282
+[2021-12-20 20:14:27,146 | INFO] Optimize with max 500 iterations ...
+[2021-12-20 20:18:16,364 | INFO] Training accuracy: 0.7214250371103414
+[2021-12-20 20:18:16,470 | INFO] Load set: {'test'}
+[2021-12-20 20:18:19,231 | INFO] Fraction of papier in {'test'}: 0.3952569169960474
+[2021-12-20 20:18:19,231 | INFO] Fraction of glas in {'test'}: 0.1976284584980237
+[2021-12-20 20:18:19,231 | INFO] Fraction of pmd in {'test'}: 0.32806324110671936
+[2021-12-20 20:18:19,231 | INFO] Fraction of restafval in {'test'}: 0.07905138339920949
+[2021-12-20 20:18:19,362 | INFO] Test accuracy: 0.5691699604743083
